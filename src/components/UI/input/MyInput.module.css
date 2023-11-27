@@ -1,6 +1,42 @@
 .inpt {
     width: 100%;
     padding: 5px 15px;
-    margin: 5px 0;
-    border: 1px solid rgb(221, 221, 4);
+    margin: 10px 0;
+    border: 1px solid #d0b164;
 }
+
+.inpt1 {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 10px 0;
+    border: 1px solid #8664D0;
+    border-radius: 4px;
+    color: #8664D0;
+}
+
+.inpt1:hover {
+    box-shadow: 0.1px 0.1px 2px 2px #ad99d8;
+}
+
+.inpt1:focus {
+    border-radius: 3px #8664D0;
+}
+
+.inpt2 {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 10px 0;
+    border: 1px solid #d0b164;
+    border-radius: 4px;
+    color: #d0b164;
+}
+
+.inpt2:hover {
+    box-shadow: 0.1px 0.1px 2px 2px #e5cf96;
+}
+
+.inpt2:focus {
+    border-radius: 3px #d0b164;
+}
+
+

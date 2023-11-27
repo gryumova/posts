@@ -1,7 +1,15 @@
 .btn {
+    margin-top: 10px;
     padding: 5px 15px;
-    color: rgb(221, 221, 4);
+    color: #d0b164;
     font-size: 14px;
-    background-color: transparent;
-    border: 1px solid rgb(221, 221, 4);
+    background-color: #ffffff;
+    border: 1px solid #d0b164;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 2px 0 #d0b164 inset, 0 0 2px 2px #d0b164;
 }
