@@ -23,12 +23,14 @@ const PostForm = ({create}) => {
                 onChange={e => setPost({...post, title : e.target.value})}
                 type="text" 
                 placeholder="Название поста"
+                required
             />
             <MyInput 
                 value={post.body}
                 onChange={e => setPost({...post, body : e.target.value})}
                 type="text" 
                 placeholder="Описание поста"
+                required
             />
             <MyButton onClick={addNewPost}>Создать пост</MyButton>
         </form>

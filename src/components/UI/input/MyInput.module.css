@@ -1,17 +1,12 @@
-.inpt {
-    width: 100%;
-    padding: 5px 15px;
-    margin: 10px 0;
-    border: 1px solid #d0b164;
-}
-
 .inpt1 {
     width: 100%;
     padding: 5px 15px;
     margin: 10px 0;
     border: 1px solid #8664D0;
     border-radius: 4px;
+    background-color: #E4E5EA;
     color: #8664D0;
+    font-size: 14px;
 }
 
 .inpt1:hover {
@@ -28,7 +23,9 @@
     margin: 10px 0;
     border: 1px solid #d0b164;
     border-radius: 4px;
+    background-color: #E4E5EA;
     color: #d0b164;
+    font-size: 14px;
 }
 
 .inpt2:hover {

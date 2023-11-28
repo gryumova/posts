@@ -6,6 +6,7 @@ import MyModal from "../components/UI/MyModal/MyModal"
 import MyButton from "../components/UI/button/MyButtton";
 import usePosts from "../hooks/usePosts"
 import '../styles/App.css'
+import "../styles/index.css"
 
 function Posts() {
   const [posts, setPosts] = useState([
@@ -53,7 +54,7 @@ function Posts() {
           filter={filter} 
           setFilter={setFilter}
         />
-        <PostList remove={removePost} posts={sortedAndSearchedPosts} title="Посты ССерво Восход"/>
+        <PostList remove={removePost} posts={sortedAndSearchedPosts} title="Статьи ССерво Восход"/>
     </div>
   );
 }

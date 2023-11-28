@@ -1,9 +1,10 @@
 import React from "react";
+import "../styles/index.css"
 
 const About = () => {
     return (
         <div>
-            About
+            ССервО ВОСХОД!!!
         </div>
     )
 }  

@@ -6,6 +6,7 @@ const MySelect = ({options, defaultValue, value, onChange}) => {
         <select
             value={value}
             onChange={e => onChange(e.target.value)}
+            className={classes.mySelect}
         >
             <option disabled value="">{defaultValue}</option>
             {options.map(option => 

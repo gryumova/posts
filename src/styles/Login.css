@@ -1,0 +1,38 @@
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.astronautSun {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.astronaut {
+    animation: pulse 10.5s linear infinite;
+    width: 400px;
+}
+
+.signup {
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .astronaut {
+        width: 150px;
+        margin: auto;
+        padding-left: 70px;
+    }
+}
+
+@keyframes pulse {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
