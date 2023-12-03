@@ -2,10 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-family: "Montserrat";
 }
-
 
 body {
 	background-color: #E4E5EA;
@@ -16,6 +15,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.post_content h6 {
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 10px;
 }
 
 @font-face {

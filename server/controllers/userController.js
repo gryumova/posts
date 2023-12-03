@@ -12,15 +12,15 @@ const generateJwt = (id, email) => {
 }
 
 class userController {
-    async registration(req, res, next) {
+    async registration(req, res, callback) {
         const {email, password} = req.body
         if (!email || !password) {
-            return next(ApiError.badRequest('Некорректный email или password'))
+            return callback(ApiError.badRequest('Некорректный email или password'))
         }
 
         const candidate = await User.findOne({where: {email}})
         if (candidate) {
-            return next(ApiError.badRequest('Пользователь с таким email уже существует!'))
+            return callback(ApiError.badRequest('Пользователь с таким email уже существует!'))
         }
 
         const hashPassword = await bcrypt.hash(password, 5)
@@ -29,16 +29,16 @@ class userController {
         return res.json({token})
     }
 
-    async login(req, res) {
+    async login(req, res, callback) {
         const {email, password} = req.body
         const user = await User.findOne({where:{email}})
         if (!user) {
-            return next(ApiError.internal('Пользователь не найден!'))
+            return callback(ApiError.internal('Пользователь не найден!'))
         }
 
         let comparePassword = bcrypt.compareSync(password, user.password)
         if (!comparePassword) {
-            return next(ApiError.internal('Неправильный пароль.'))
+            return callback(ApiError.internal('Неправильный пароль.'))
         }
         
         const token = generateJwt(user.id, user.email)
@@ -46,7 +46,7 @@ class userController {
         return res.json({token})
     }
 
-    async auth(req, res, next) {
+    async check(req, res, next) {
         const token = generateJwt(req.user.id, req.user.email)
         return res.json({token})
     }

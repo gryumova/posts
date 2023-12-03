@@ -11,7 +11,7 @@ const PostItem = (props) => {
                 <h3>{props.number}. {props.post.title}</h3>
                 <h6>{props.post.date}</h6>
                 <div className="post_text">
-                    {props.post.body}
+                    <p style={{lineHeight:2}}>{props.post.body}</p>
                 </div>
             </div>
             <div className="posts_btn">

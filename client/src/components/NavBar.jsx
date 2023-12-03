@@ -1,36 +1,48 @@
-import React, { useContext, useMemo} from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/NavBar.css"
 import MyButton from "./UI/button/MyButtton";
-import { AuthContext } from "../context";
+import { Context } from "../index";
+import { observer } from "mobx-react-lite";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+const NavBar = observer(() => {
+    const {user} = useContext(Context);
+    const router = useNavigate()
+    // const location = useLocation()
+
+    // const isAbout = location.pathname === "/about"
+    // const textColor = isAbout? {color:"white"} : {color:"black"}
 
     const logOut = () => {
-        setIsAuth(false);
-        localStorage.removeItem('auth');
+        user.setUser({})
+        user.setIsAuth(false)
+        localStorage.removeItem('token')
     }
 
-   const outBtnStyle = useMemo(()=> {
-        if (!isAuth) return {display:"none"}
-        return {};
-    }, [isAuth]);
-
     return (
-        <div className="navbar">
-            <MyButton
-                onClick={logOut}
-                style={outBtnStyle}
-            >
-                Выйти
-            </MyButton>
-            <div className="navbar_links">
-                <Link to="/about">About</Link>
-                <Link to="/posts">Posts</Link>
+            user.isAuth 
+            ?
+            <div className="navbar">
+                <MyButton
+                    onClick={logOut}
+                >
+                    Выйти
+                </MyButton>
+                <div className="navbar_links">
+                    <Link to="/about">About</Link>
+                    <Link to="/posts">Posts</Link>
+                </div>
             </div>
-        </div>
+            :
+            <div className="navbar">
+                <MyButton
+                    onClick={() => router("/login")}
+                >
+                    Войти
+                </MyButton>
+            </div>
     )
-}
+})
 
 export default NavBar;

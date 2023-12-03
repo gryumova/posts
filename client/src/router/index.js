@@ -4,11 +4,11 @@ import PostIdPage from "../pages/PostIdPage"
 import Posts from "../pages/Posts"
 
 export const publicRoutes = [
-    { path: '/login', element: Login}
+    { path: '/login', element: Login},
+    { path: '/about', element: About },
 ]
 
 export const privateRoutes = [
-    { path: '/about', element: About },
     { path: '/posts', element: Posts },
-    { path: '/posts/:id', element: PostIdPage }
+    { path: '/posts/:id', element: PostIdPage },
 ]

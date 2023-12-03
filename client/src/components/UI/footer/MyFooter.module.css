@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.footer_links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_links a {
+    margin-right: 100px;
+    text-decoration: none;
+    color: white
+}
