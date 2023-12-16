@@ -8,4 +8,13 @@ function getFormatedTime() {
     
 }
 
-export default getFormatedTime;
+function getDate(str) {
+    // let day = date.indexOf("-");
+    // let month = date.getMonth() + 1;
+    // let year = date.getFullYear();
+     
+    // return day + "." + month + "." + year;
+    return str;
+}
+
+export default {getFormatedTime, getDate};

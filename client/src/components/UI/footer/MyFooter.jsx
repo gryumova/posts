@@ -12,7 +12,7 @@ const MyFooter = ()  => {
             <div></div>
             <div className={classes.contact_links}>
                 <a href="https://vk.com/sservo_voshod">
-                    <img src={require("../../../assets/vk.png")}  width={40}/>
+                    <img src={require("../../../assets/vk.png")}  width={40} alt="vk"/>
                 </a>
             </div>
         </div>

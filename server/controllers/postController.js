@@ -6,21 +6,28 @@ const {Post, PostImage} = require('../models/models')
 class postController {
     async create(req, res, next) {
         try {
-            const {name, body} = req.body
-            const {imgs} = req.files
-
-            const post = await Post.create({ name, body })
-            
-            if (imgs) {
-                imgs.forEach(img => {
-                    let fileName = uuid.v4() +".jpg"
-                    img.mv(path.resolve(__dirname, "..", "static", fileName))
-                    PostImage.create({
-                        img: fileName,
-                        postId: post.id
-                    })
-                });
-            }
+            let {name, body} = req.body;
+            const file = req.file;
+            console.log(file, img);
+            const post = await Post.create({ name, body });
+     
+            // if (img) {
+            //     let fileName = uuid.v4() + ".jpg";
+            //     img.mv(path.resolve(__dirname, '..', 'static', fileName));
+            //     PostImage.create({
+            //         img: fileName,
+            //         postId: post.id
+            //     })
+                
+            //     // img.forEach(elem => {
+            //     //     let fileName = uuid.v4() +".jpg";
+            //     //     elem.mv(path.resolve(__dirname, "..", "static", fileName));
+            //     //     PostImage.create({
+            //     //         img: fileName,
+            //     //         postId: post.id
+            //     //     })
+            //     // });
+            // }
 
             return res.json(post)
         } catch (e) {
@@ -29,18 +36,19 @@ class postController {
     }
 
     async getAll(req, res) {
-        const {limit, page} = req.query
-        page = page || 1
-        limit = limit || 9
+        // const {limit, page} = req.query
+        // page = page? page: 1
+        // limit = limit? limit: 9
 
-        let offset = page * limit - limit
-        const posts = await Post.findAll({limit, offset})
+        // let offset = page * limit - limit
+        // const posts = await Post.findAll({limit, offset})
+        const posts = await Post.findAll();
 
         return res.json(posts)
     }
 
     async getOne(req, res) {
-        const {id} = req.params
+        const {id} = req.params;
 
         const post = await Post.findOne(
             {

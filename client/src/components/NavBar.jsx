@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/NavBar.css"
 import MyButton from "./UI/button/MyButtton";
 import { Context } from "../index";
@@ -8,11 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = observer(() => {
     const {user} = useContext(Context);
-    const router = useNavigate()
-    // const location = useLocation()
-
-    // const isAbout = location.pathname === "/about"
-    // const textColor = isAbout? {color:"white"} : {color:"black"}
+    const router = useNavigate();
 
     const logOut = () => {
         user.setUser({})

@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div className="about">
             <div className="header">
-                <img src={require("../assets/raketa.png")} style={{width:700}}/>
+                <img src={require("../assets/raketa.png")} style={{width:700}} alt="raketa"/>
                 <div className="header_text">
                     <h1>Студенческий сервисный отряд</h1>
                     <h1 className="decorated_text"> Восход </h1>
@@ -47,15 +47,15 @@ const About = () => {
                 <h2>Командный состав 2024</h2>
                 <div className="ks_items">
                     <div className="master">
-                        <img className="imgmaster" src={require("../assets/ks1.png")} alc="ks"/>
+                        <img className="imgmaster" src={require("../assets/ks1.png")} alc="ks" alt="master"/>
                         <h4 className="name_ks">Семенов Михаил</h4>
                     </div>
                     <div className="komandir">
-                        <img className="imgkomandir" src={require("../assets/ks2.png")} alc="ks"/>
+                        <img className="imgkomandir" src={require("../assets/ks2.png")} alc="ks" alt="komandir"/>
                         <h4 className="name_ks">Суханов Иван</h4>
                     </div>
                     <div className="komissar">
-                        <img className="imgkomissar" src={require("../assets/ks3.png")} alc="ks"/>
+                        <img className="imgkomissar" src={require("../assets/ks3.png")} alc="ks" alt="komissar"/>
                         <h4 className="name_ks">Богомолов Илья</h4>
                     </div>
                 </div>

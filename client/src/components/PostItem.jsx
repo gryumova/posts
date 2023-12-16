@@ -8,8 +8,8 @@ const PostItem = (props) => {
     return (
         <div className="post">
             <div className="post_content">
-                <h3>{props.number}. {props.post.title}</h3>
-                <h6>{props.post.date}</h6>
+                <h3>{props.number}. {props.post.name}</h3>
+                <h6>{props.post.createdAt}</h6>
                 <div className="post_text">
                     <p style={{lineHeight:2}}>{props.post.body}</p>
                 </div>
